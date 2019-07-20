@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordChecker.MainPage">
+    <ScrollView>
+        <StackLayout Margin="10,35,10,10">
+            <AbsoluteLayout>
+                <Label x:Name="WaitingRequestText"
+               Text="Checking..." HorizontalTextAlignment="End"
+               AbsoluteLayout.LayoutBounds="1,0.2,100,30" />
+                <Label x:Name="DuplicateWordText"
+               Text="Word already exists." TextColor="IndianRed" HorizontalTextAlignment="Center"
+               AbsoluteLayout.LayoutBounds="0.5,0.5,150,30" LineBreakMode="NoWrap" />
+            </AbsoluteLayout>
+            <Label x:Name="ScoreText"
+                   Text="0 Points"
+                   HorizontalOptions="Center"
+                   FontSize="32"
+                   FontAttributes="Bold" />
+            <Label Text="Words List"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold" />
+            <StackLayout x:Name="insertedWords">
+            </StackLayout>
+            <Entry x:Name="WordEntry"
+                   Placeholder="Enter word"
+                   HeightRequest="100"
+                   TextChanged="EntryTextChanged"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Add Word"
+                        x:Name="AddButton"
+                        Clicked="OnAddButtonClicked" />
+                <Button Grid.Column="1"
+                        Text="Clear Field"
+                        Clicked="OnClearButtonClicked"/>
+            </Grid>
+            <Button Text="Reset"
+                    WidthRequest="100"
+                    HorizontalOptions="Center"
+                    x:Name="ResetButton"
+                    Clicked="OnResetButtonClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
