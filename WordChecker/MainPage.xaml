@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordChecker.MainPage">
-    <ScrollView>
-        <StackLayout Margin="10,35,10,10">
+        <StackLayout Margin="10,10,10,180">
             <AbsoluteLayout>
                 <Label x:Name="WaitingRequestText"
                Text="Checking..." HorizontalTextAlignment="End"
@@ -15,34 +14,38 @@
             <Label x:Name="ScoreText"
                    Text="0 Points"
                    HorizontalOptions="Center"
-                   FontSize="32"
+                   FontSize="20"
                    FontAttributes="Bold" />
-            <Label Text="Words List"
-                   HorizontalOptions="Center"
-                   FontAttributes="Bold" />
+        <ScrollView>
             <StackLayout x:Name="insertedWords">
             </StackLayout>
-            <Entry x:Name="WordEntry"
+        </ScrollView>
+        <Entry x:Name="WordEntry"
                    Placeholder="Enter word"
-                   HeightRequest="100"
+                   HeightRequest="50"
                    TextChanged="EntryTextChanged"/>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button Text="Add Word"
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button Text="Add Word"
                         x:Name="AddButton"
+                        HeightRequest="50"
                         Clicked="OnAddButtonClicked" />
                 <Button Grid.Column="1"
                         Text="Clear Field"
+                        HeightRequest="50"
                         Clicked="OnClearButtonClicked"/>
             </Grid>
             <Button Text="Reset"
                     WidthRequest="100"
+                    HeightRequest="50"
                     HorizontalOptions="Center"
                     x:Name="ResetButton"
                     Clicked="OnResetButtonClicked" />
         </StackLayout>
-    </ScrollView>
 </ContentPage>
