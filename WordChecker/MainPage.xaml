@@ -6,7 +6,7 @@
             <AbsoluteLayout>
                 <Label x:Name="WaitingRequestText"
                Text="Checking..." HorizontalTextAlignment="End"
-               AbsoluteLayout.LayoutBounds="1,0.2,100,30" />
+               AbsoluteLayout.LayoutBounds="1,0.5,100,30" />
                 <Label x:Name="DuplicateWordText"
                Text="Word already exists." TextColor="IndianRed" HorizontalTextAlignment="Center"
                AbsoluteLayout.LayoutBounds="0.5,0.5,150,30" LineBreakMode="NoWrap" />
